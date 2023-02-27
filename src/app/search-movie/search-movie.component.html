@@ -1,0 +1,24 @@
+<form>
+    <div class="form-group" [formGroup]="movieForm">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form7Example1">Search Title : </label>
+              <input type="text" id="form7Example1" class="form-control" formControlName="title"
+                (keyup)="searchMovie($event)" />
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;" class="mb-2" *ngFor="let movie of movieData">
+          <img class="card-img-top" [src]="movie.Poster" [alt]="movie.Title" style="width:18rem; height:12rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.Title}}</h5>
+            <p class="card-text">Year - {{movie.Year}}</p>
+            <p class="card-text">ImdbID - {{movie.imdbID}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  
